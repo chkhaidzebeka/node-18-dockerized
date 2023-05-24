@@ -1,0 +1,22 @@
+{
+    "conole.log string": {
+        "prefix": "cl",
+        "body": ["console.log($1)"],
+        "description": "conole.log string"
+    },
+    "conole.log object": {
+        "prefix": "cll",
+        "body": ["console.log({ $1 })"],
+        "description": "conole.log object"
+    },
+    "Function expression": {
+        "prefix": "fne",
+        "body": ["const ${1:myFunction} = (${2:param}) => {\n\t$0\n}"],
+        "description": "Function expression statement"
+    },
+    "JSON-ify": {
+        "prefix": "jsnf",
+        "body": ["JSON.stringify($1)"],
+        "description": "JSON stringify variable"
+    }
+}

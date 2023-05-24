@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: node-alpine.Dockerfile
+    image: app
+    container_name: connect-api-node
+    restart: always
+    env_file: .env
+    ports:
+      - '$PORT:$PORT'
+    volumes:
+      - .:/home/node/app
+    # uncomment if you need database in your app
+    # depends_on:
+    #   - mongo
+
+  # mongo:
+  #   image: mongo:6.0.3
+  #   container_name: connect-api-mongo
+  #   restart: unless-stopped
+  #   env_file: .env
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=$DB_ADMIN
+  #     - MONGO_INITDB_ROOT_PASSWORD=$DB_ADMIN_PWD
+  #     - MONGO_INITDB_DATABASE=$DB_NAME
+  #   ports:
+  #     - '$DB_PORT:27017'
