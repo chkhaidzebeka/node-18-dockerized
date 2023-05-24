@@ -1,12 +1,14 @@
-import express, { Request, Response } from 'express';
+/** IMPORT CORE MODULES */
+import express from 'express';
+import { routes } from './routes/index.js';
 
 const app = express()
-const port = 3000; // will change it
+const port = process.env.PORT;
 
-app.get('/', (req: Request, res: Response) => {
-    res.json({ "message": "Hello world" })
-})
+
+app.use('/', routes);
+
 
 app.listen(port, () => {
-    console.log(`example app is running at http://localhost:${port}`)
+    console.log(`App is running at http://localhost:${port}`)
 })
