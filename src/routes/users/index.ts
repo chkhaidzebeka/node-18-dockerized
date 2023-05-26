@@ -5,7 +5,7 @@ const router = express.Router();
 router.get(
   '/',
     (req: Request, res: Response) => {
-        res.json({ "msg": "GET /users" })
+        res.json({ "debug": "GET /users" })
     }
 );
 
